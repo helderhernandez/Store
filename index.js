@@ -2,6 +2,7 @@
 const express = require("express")
 const dbSequelize = require("./src/config/database.config.js")
 const productoRouter = require("./src/features/productos/ProductoRouter.js")
+const ventaRouter = require("./src/features/ventas/VentaRouter.js")
 
 // Variables
 const app = express()
@@ -15,6 +16,7 @@ app.get("/", (req, res) => {
     res.send("Store - Prueba tecnica desarrollada por Helder Hernandez")
 })
 app.use("/productos", productoRouter)
+app.use("/ventas", ventaRouter)
 
 // Authenticate DB
 try {
