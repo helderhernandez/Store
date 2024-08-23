@@ -1,6 +1,7 @@
 // Imports
 const express = require("express")
 const dbSequelize = require("./src/config/database.config.js")
+const productoRouter = require("./src/features/productos/ProductoRouter.js")
 
 // Variables
 const app = express()
@@ -13,6 +14,7 @@ app.use(express.urlencoded({ extended: true }))
 app.get("/", (req, res) => {
     res.send("Store - Prueba tecnica desarrollada por Helder Hernandez")
 })
+app.use("/productos", productoRouter)
 
 // Authenticate DB
 try {
